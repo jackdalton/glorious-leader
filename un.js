@@ -9,9 +9,7 @@ function init() { // called on page load
     startMenu();
 }
 function startGame() { // game starting function
-    document.getElementById("playbutton").style.opacity = 0;
-    document.getElementById("playbutton").style.left = -999 + "px";
-    document.getElementById("playbutton").style.top = -999 + "px";
+    playing = true;
     scoreLoop();
     gameloop();
     detectHits();
@@ -147,23 +145,30 @@ function buttonCheck(x,y) {
         startGame();
     }
 }*/
+window.onkeypress = checkKey;
+function checkKey(e) {
+    if (e.keyCode == 32 && playing === false) {
+        startGame();
+    }
+    if (e.keyCode == 32 && lost === true) {
+        window.location.assign(window.location);
+    }
+}
 function startMenu() { // starts game menu
     c.width = c.width; // clears canvas
-    ctx.font = "normal 36px Verdana"; // sets up menu *
+    ctx.font = "normal 32px Verdana"; // sets up menu *
     ctx.strokeRect(100, 30, 300, 100); // *
     ctx.strokeStyle = "red"; // *
     ctx.strokeText("Glorious Leader", 130, 90); // *
     ctx.strokeStyle = "black"; // *
     ctx.strokeRect(125, 300, 250, 75); // *
-    ctx.strokeText("Play", 210, 350); // **
+    ctx.strokeText("Space to play.", 165, 350); // **
     if (!playing) { // if play button has not been pressed, rerender menu
         window.requestAnimationFrame(startMenu);
     }
 }
 function startResetButton() { // sets up reset button
     ctx.strokeRect(125, 300, 250, 75);
-    ctx.font = "normal 36px Verdana";
-    ctx.strokeText("Reset", 210, 350);
-    document.getElementById("resetbutton").style.left = 196 + "px";
-    document.getElementById("resetbutton").style.top = 308 + "px";
+    ctx.font = "normal 32px Verdana";
+    ctx.strokeText("Space to reset.", 165, 350);
 }
