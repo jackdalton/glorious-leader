@@ -5,6 +5,13 @@
 function init() { // called on page load
     c = document.getElementById("canvas"); // get canvas
     ctx = c.getContext("2d"); // get context
+    // c.addEventListener("mousedown", getPosition, false);
+    startMenu();
+}
+function startGame() { // game starting function
+    document.getElementById("playbutton").style.opacity = 0;
+    document.getElementById("playbutton").style.left = -999 + "px";
+    document.getElementById("playbutton").style.top = -999 + "px";
     scoreLoop();
     gameloop();
     detectHits();
@@ -12,7 +19,8 @@ function init() { // called on page load
 var c, ctx, unX = [], unY = [],
     then = Date.now(),
     lost = false,
-    score = 0; // misc vars
+    score = 0,
+    playing = false; // misc vars
 var obama = { // main obama var
     x:240,
     y:460,
@@ -73,6 +81,7 @@ function gameloop() { // main game loop
     }
     else {
         lose();
+        startResetButton();
     }
     window.requestAnimationFrame(gameloop); // does it all again
 }
@@ -121,3 +130,40 @@ addEventListener("keydown", function(e) { // checks for keys down
 addEventListener("keyup", function(e) { // checks for keys released
     delete keysDown[e.keyCode];
 }, false);
+/*function getPosition(event) {
+    var x = event.x;
+    var y = event.y;
+    x -= c.offsetLeft;
+    y -= c.offsetTop;
+    buttonCheck(x,y);
+}
+function buttonCheck(x,y) {
+    if (
+        x >= 300 &&
+        y >= 125 &&
+        y <= 335 &&
+        x <= 475
+    ) {
+        startGame();
+    }
+}*/
+function startMenu() { // starts game menu
+    c.width = c.width; // clears canvas
+    ctx.font = "normal 36px Verdana"; // sets up menu *
+    ctx.strokeRect(100, 30, 300, 100); // *
+    ctx.strokeStyle = "red"; // *
+    ctx.strokeText("Glorious Leader", 130, 90); // *
+    ctx.strokeStyle = "black"; // *
+    ctx.strokeRect(125, 300, 250, 75); // *
+    ctx.strokeText("Play", 210, 350); // **
+    if (!playing) { // if play button has not been pressed, rerender menu
+        window.requestAnimationFrame(startMenu);
+    }
+}
+function startResetButton() { // sets up reset button
+    ctx.strokeRect(125, 300, 250, 75);
+    ctx.font = "normal 36px Verdana";
+    ctx.strokeText("Reset", 210, 350);
+    document.getElementById("resetbutton").style.left = 196 + "px";
+    document.getElementById("resetbutton").style.top = 308 + "px";
+}
