@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #canvas {
+                border:1px solid black;
+            }
+            .hidden {
+                position:fixed;
+                left:-1000px;
+                height:-1000px;
+            }
+            #lostmessage {
+                border:1px solid black;
+                width:300px;
+                height:150px;
+                opacity:0;
+                position:fixed;
+                left:30%;
+                top:10%;
+                z-index: 10;
+            }
+        </style>
+        <script src="un.js"></script>
+        <title>Glorious Leader</title>
+    </head>
+    <body onload="init()">
+        <img class="hidden" src="obama.png" id="obamaImage" width="10" height="13">
+        <img class="hidden" src="un.png" id="unImage" width="10" height="11.847826086956522">
+        <div id="lostmessage">
+            <center>
+                <h1 id="lostmessagetext"></h1>
+            </center>
+        </div>
+        <center>
+            <canvas id="canvas" height="500" width="500"></canvas>
+        </center>
+    </body>
+</html>
