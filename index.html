@@ -20,32 +20,6 @@
                 top:10%;
                 z-index: 10;
             }
-            #playbutton {
-                border:1px solid black;
-                position: fixed;
-                width:250px;
-                height:75px;
-                z-index:10;
-                left:196px;
-                top:308px;
-            }
-            #playbutton:hover {
-                cursor:hand;
-                cursor:pointer;
-            }
-            #resetbutton {
-                border:1px solid black;
-                position: fixed;
-                width:250px;
-                height:75px;
-                z-index:10;
-                left:-196px;
-                top:-308px;
-            }
-            #resetbutton:hover {
-                cursor:hand;
-                cursor:pointer;
-            }
         </style>
         <script src="un.js"></script>
         <title>Glorious Leader</title>
@@ -53,8 +27,6 @@
     <body onload="init()">
         <img class="hidden" src="obama.png" id="obamaImage" width="10" height="13">
         <img class="hidden" src="un.png" id="unImage" width="10" height="11.847826086956522">
-        <div id="playbutton" onclick="startGame()"></div>
-        <div id="resetbutton" onclick="window.location.assign(window.location)"></div>
         <div id="lostmessage">
             <center>
                 <h1 id="lostmessagetext"></h1>
