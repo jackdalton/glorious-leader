@@ -170,5 +170,5 @@ function startMenu() { // starts game menu
 function startResetButton() { // sets up reset button
     ctx.strokeRect(125, 300, 250, 75);
     ctx.font = "normal 32px Verdana";
-    ctx.strokeText("Space to reset.", 145, 350);
+    ctx.strokeText("Space to reset.", 130, 350);
 }
