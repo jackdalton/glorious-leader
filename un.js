@@ -162,7 +162,7 @@ function startMenu() { // starts game menu
     ctx.strokeText("Glorious Leader", 130, 90); // *
     ctx.strokeStyle = "black"; // *
     ctx.strokeRect(125, 300, 250, 75); // *
-    ctx.strokeText("Space to play.", 165, 350); // **
+    ctx.strokeText("Space to play.", 150, 350); // **
     if (!playing) { // if play button has not been pressed, rerender menu
         window.requestAnimationFrame(startMenu);
     }
