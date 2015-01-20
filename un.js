@@ -33,7 +33,7 @@ var un = { // main un var
         }
     },
     generate:function() { // generates new instances of un
-        unX.push(rand(40, 460));
+        unX.push(rand(0, 460));
         unY.push(rand(0, -10));
     },
     drop:function() { // makes un instances fall
