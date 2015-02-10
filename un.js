@@ -121,10 +121,10 @@ function removeItem(array, item) { // removes item from given array
     }
 }
 var move = function(m) { // movement function
-    if (37 in keysDown && obama.x > 35) { // if left arrow key pressed, move left
+    if (37 in keysDown && obama.x > 10) { // if left arrow key pressed, move left
         obama.x -= 180 * m; // obama movement
     }
-    if (39 in keysDown && obama.x < 465) { // if right arrow key pressed, move right
+    if (39 in keysDown && obama.x < 475) { // if right arrow key pressed, move right
         obama.x += 180 * m; // obama movement
     }
 };
