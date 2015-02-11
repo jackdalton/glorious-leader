@@ -169,7 +169,8 @@ function buttonCheck(x,y) {
         startGame();
     }
 }*/
-window.onkeypress = checkKey;
+$(document).keydown(checkKey);
+//window.onkeypress = checkKey;
 function checkKey(e) {
     if (e.keyCode == 32 && playing === false) {
         startGame();
