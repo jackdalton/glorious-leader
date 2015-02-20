@@ -111,7 +111,7 @@ function gameloop() { // main game loop
 }
 function lose() { // displays loss message
     document.getElementById("lostmessage").style.opacity = 1;
-    document.getElementById("lostmessage").style.left = middle;
+    document.getElementById("lostmessage").style.left = middle + "px";
     document.getElementById("lostmessagetext").innerHTML = "Game Over!<br>Score:" + score + ".";
 }
 function rand(min, max) { //  random number generator
