@@ -26,6 +26,13 @@
             *::selection {
                 background-color:red;
             }
+            button {
+                border: 1px solid black;
+                
+            }
+            button:hover {
+                cursor: pointer;
+                background-color: white;
             }
         </style>
         <script src="jquery.min.js"></script>
@@ -38,7 +45,8 @@
         <img class="hidden" src="un.png" id="unImage" width="10" height="11.847826086956522">
         <div id="lostmessage">
             <center>
-                <h1 id="lostmessagetext"></h1>
+                <h1 id="lostmessagetext"></h1><br>
+                <button onclick="submitScore()">Submit Score</button>
             </center>
         </div>
         <center>
