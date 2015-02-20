@@ -200,3 +200,7 @@ function startResetButton() { // sets up reset button
     ctx.font = "normal 32px Verdana";
     ctx.strokeText("Space to reset.", 130, 350);
 }
+function submitScore() {
+    document.getElementById("scoreformscore").value = score;
+    document.getElementById("scoreform").submit();
+}
