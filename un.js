@@ -202,5 +202,6 @@ function startResetButton() { // sets up reset button
 }
 function submitScore() {
     document.getElementById("scoreformscore").value = score;
+    document.getElementById("scoreformuser").value = prompt("User:");
     document.getElementById("scoreform").submit();
 }
