@@ -31,6 +31,7 @@ function init() { // called on page load
     ctx = c.getContext("2d"); // get context
     // c.addEventListener("mousedown", getPosition, false);
     startMenu();
+    middle = ($(window).width() / 2) - 125;
 }
 function startGame() { // game starting function
     playing = true;
@@ -42,7 +43,8 @@ var c, ctx, unX = [], unY = [],
     then = Date.now(),
     lost = false,
     score = 0,
-    playing = false; // misc vars
+    playing = false,
+    middle; // misc vars
 var obama = { // main obama var
     x:240,
     y:460,
@@ -109,6 +111,7 @@ function gameloop() { // main game loop
 }
 function lose() { // displays loss message
     document.getElementById("lostmessage").style.opacity = 1;
+    document.getElementById("lostmessage").style.left = middle;
     document.getElementById("lostmessagetext").innerHTML = "Game Over!<br>Score:" + score + ".";
 }
 function rand(min, max) { //  random number generator
