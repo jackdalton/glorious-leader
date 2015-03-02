@@ -44,7 +44,8 @@ var c, ctx, unX = [], unY = [],
     lost = false,
     score = 0,
     playing = false,
-    middle; // misc vars
+    middle,
+    fallSpeed = 3; // misc vars
 var obama = { // main obama var
     x:240,
     y:460,
@@ -64,7 +65,7 @@ var un = { // main un var
     },
     drop:function() { // makes un instances fall
         for (var i = 0; i < unY.length; i++) {
-            unY[i] += 2.5;
+            unY[i] += fallSpeed;
         }
     }
 };
