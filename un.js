@@ -93,7 +93,7 @@ function gameloop() { // main game loop
     if (!lost) { // if player hasn't lost
         un.render(); // renders un
         obama.render(); // renders obama
-        if (chance10()) { // 5% chance of un instance being generated
+        if (chance10()) { // 10% chance of un instance being generated
             un.generate();
         }
         un.drop(); // makes the fat man fall :)
@@ -148,7 +148,7 @@ function chance5() { // 5 percent chance
         return false;
     }
 }
-function chance10() {
+function chance10() { // 10 percent chance
     if (rand(1, 10) == 1)
         return true;
     else
