@@ -64,7 +64,7 @@ var un = { // main un var
     },
     drop:function() { // makes un instances fall
         for (var i = 0; i < unY.length; i++) {
-            unY[i] += 2;
+            unY[i] += 2.5;
         }
     }
 };
