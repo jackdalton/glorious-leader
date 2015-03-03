@@ -45,7 +45,8 @@ var c, ctx, unX = [], unY = [],
     score = 0,
     playing = false,
     middle,
-    fallSpeed = 3; // misc vars
+    fallSpeed = 3,
+    scInt = 100; // misc vars
 var obama = { // main obama var
     x:240,
     y:460,
@@ -85,7 +86,7 @@ function detectHits() { // detects collisions between obama and un
 function scoreLoop() { // main score loop
     if (!lost) { // if player hasn't lost yet, their score increases
         score++;
-        setTimeout(scoreLoop, 100); // does it all again every 10th of a second
+        setTimeout(scoreLoop, scInt); // does it all again every 10th of a second
     }
 }
 function gameloop() { // main game loop
